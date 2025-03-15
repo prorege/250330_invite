@@ -141,15 +141,15 @@
                 </div>
             </div>
             
+            
+            
             <div id="information1">
                 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
                 <script>
-                    Kakao.init("b9d626cc4e7bdf983a794510902621bd");
                     if (!Kakao.isInitialized()) {
-                        console.error("Kakao SDK initialization failed");
-                    } else {
-                        console.log("Kakao SDK initialized successfully");
+                        Kakao.init("b9d626cc4e7bdf983a794510902621bd");
                     }
+                    console.log("Kakao initialized:", Kakao.isInitialized());
             
                     function shareMessage() {
                         console.log("shareMessage called");
@@ -163,9 +163,9 @@
                         }
                     }
                 </script>
-                <a id="kakaotalk-sharing-btn" href="javascript:shareMessage()" class="shadow-small icon icon-round no-border icon-xs copyText nanum-font">
+                <a href="javascript:shareMessage()" class="share-btn shadow-small icon icon-round no-border icon-xs">
                     <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" class="sns-logo" alt="카카오톡 공유 보내기 버튼" />
-                    카카오톡 공유
+                    <span class="copyText nanum-font">카카오톡 공유</span>
                 </a>
             </div>
 
